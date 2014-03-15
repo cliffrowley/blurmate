@@ -1,0 +1,289 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ADCF61F918D511E0006463C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADCF61F818D511E0006463C8 /* Cocoa.framework */; };
+		ADCF620318D511E0006463C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADCF620118D511E0006463C8 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ADCF61F518D511E0006463C8 /* BlurMate.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlurMate.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCF61F818D511E0006463C8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		ADCF61FB18D511E0006463C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ADCF61FC18D511E0006463C8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		ADCF61FD18D511E0006463C8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		ADCF620018D511E0006463C8 /* BlurMate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlurMate-Info.plist"; sourceTree = "<group>"; };
+		ADCF620218D511E0006463C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ADCF620418D511E0006463C8 /* BlurMate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BlurMate-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ADCF61F218D511E0006463C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADCF61F918D511E0006463C8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ADCF61EC18D511E0006463C8 = {
+			isa = PBXGroup;
+			children = (
+				ADCF61FE18D511E0006463C8 /* BlurMate */,
+				ADCF61F718D511E0006463C8 /* Frameworks */,
+				ADCF61F618D511E0006463C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ADCF61F618D511E0006463C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF61F518D511E0006463C8 /* BlurMate.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADCF61F718D511E0006463C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF61F818D511E0006463C8 /* Cocoa.framework */,
+				ADCF61FA18D511E0006463C8 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADCF61FA18D511E0006463C8 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF61FB18D511E0006463C8 /* Foundation.framework */,
+				ADCF61FC18D511E0006463C8 /* CoreData.framework */,
+				ADCF61FD18D511E0006463C8 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		ADCF61FE18D511E0006463C8 /* BlurMate */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF61FF18D511E0006463C8 /* Supporting Files */,
+			);
+			path = BlurMate;
+			sourceTree = "<group>";
+		};
+		ADCF61FF18D511E0006463C8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADCF620018D511E0006463C8 /* BlurMate-Info.plist */,
+				ADCF620118D511E0006463C8 /* InfoPlist.strings */,
+				ADCF620418D511E0006463C8 /* BlurMate-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ADCF61F418D511E0006463C8 /* BlurMate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADCF620718D511E0006463C8 /* Build configuration list for PBXNativeTarget "BlurMate" */;
+			buildPhases = (
+				ADCF61F118D511E0006463C8 /* Sources */,
+				ADCF61F218D511E0006463C8 /* Frameworks */,
+				ADCF61F318D511E0006463C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlurMate;
+			productName = BlurMate;
+			productReference = ADCF61F518D511E0006463C8 /* BlurMate.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADCF61ED18D511E0006463C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Cliff Rowley";
+			};
+			buildConfigurationList = ADCF61F018D511E0006463C8 /* Build configuration list for PBXProject "BlurMate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ADCF61EC18D511E0006463C8;
+			productRefGroup = ADCF61F618D511E0006463C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADCF61F418D511E0006463C8 /* BlurMate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADCF61F318D511E0006463C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADCF620318D511E0006463C8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADCF61F118D511E0006463C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ADCF620118D511E0006463C8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADCF620218D511E0006463C8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ADCF620518D511E0006463C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		ADCF620618D511E0006463C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		ADCF620818D511E0006463C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlurMate/BlurMate-Prefix.pch";
+				INFOPLIST_FILE = "BlurMate/BlurMate-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		ADCF620918D511E0006463C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlurMate/BlurMate-Prefix.pch";
+				INFOPLIST_FILE = "BlurMate/BlurMate-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADCF61F018D511E0006463C8 /* Build configuration list for PBXProject "BlurMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADCF620518D511E0006463C8 /* Debug */,
+				ADCF620618D511E0006463C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADCF620718D511E0006463C8 /* Build configuration list for PBXNativeTarget "BlurMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADCF620818D511E0006463C8 /* Debug */,
+				ADCF620918D511E0006463C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADCF61ED18D511E0006463C8 /* Project object */;
+}
