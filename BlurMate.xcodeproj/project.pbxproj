@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		ADCF61F918D511E0006463C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADCF61F818D511E0006463C8 /* Cocoa.framework */; };
 		ADCF620318D511E0006463C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADCF620118D511E0006463C8 /* InfoPlist.strings */; };
+		ADCF620C18D511FE006463C8 /* BlurMate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCF620B18D511FE006463C8 /* BlurMate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ADCF61F518D511E0006463C8 /* BlurMate.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlurMate.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADCF61F518D511E0006463C8 /* BlurMate.tmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlurMate.tmplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCF61F818D511E0006463C8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ADCF61FB18D511E0006463C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ADCF61FC18D511E0006463C8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -20,6 +21,8 @@
 		ADCF620018D511E0006463C8 /* BlurMate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlurMate-Info.plist"; sourceTree = "<group>"; };
 		ADCF620218D511E0006463C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ADCF620418D511E0006463C8 /* BlurMate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BlurMate-Prefix.pch"; sourceTree = "<group>"; };
+		ADCF620A18D511FE006463C8 /* BlurMate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurMate.h; sourceTree = "<group>"; };
+		ADCF620B18D511FE006463C8 /* BlurMate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurMate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +49,7 @@
 		ADCF61F618D511E0006463C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ADCF61F518D511E0006463C8 /* BlurMate.bundle */,
+				ADCF61F518D511E0006463C8 /* BlurMate.tmplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				ADCF61FF18D511E0006463C8 /* Supporting Files */,
+				ADCF620A18D511FE006463C8 /* BlurMate.h */,
+				ADCF620B18D511FE006463C8 /* BlurMate.m */,
 			);
 			path = BlurMate;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 				ADCF61F118D511E0006463C8 /* Sources */,
 				ADCF61F218D511E0006463C8 /* Frameworks */,
 				ADCF61F318D511E0006463C8 /* Resources */,
+				AD017F7018D5399E004AF7E7 /* Copy To TextMate Dir */,
 			);
 			buildRules = (
 			);
@@ -105,7 +111,7 @@
 			);
 			name = BlurMate;
 			productName = BlurMate;
-			productReference = ADCF61F518D511E0006463C8 /* BlurMate.bundle */;
+			productReference = ADCF61F518D511E0006463C8 /* BlurMate.tmplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -145,11 +151,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD017F7018D5399E004AF7E7 /* Copy To TextMate Dir */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy To TextMate Dir";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TMPLUGIN_DIR=\"$HOME/Library/Application Support/TextMate/PlugIns\"\nTMPLUGIN_NAME=\"${TARGETNAME}.${WRAPPER_EXTENSION}\"\nrm -rf \"${TMPLUGIN_DIR}/${TMPLUGIN_NAME}\"\ncp -rf \"${BUILT_PRODUCTS_DIR}/${TMPLUGIN_NAME}\" \"${TMPLUGIN_DIR}/${TMPLUGIN_NAME}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ADCF61F118D511E0006463C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCF620C18D511FE006463C8 /* BlurMate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +270,7 @@
 				INFOPLIST_FILE = "BlurMate/BlurMate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = tmplugin;
 			};
 			name = Debug;
 		};
@@ -259,7 +283,7 @@
 				INFOPLIST_FILE = "BlurMate/BlurMate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = tmplugin;
 			};
 			name = Release;
 		};
@@ -282,6 +306,7 @@
 				ADCF620918D511E0006463C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

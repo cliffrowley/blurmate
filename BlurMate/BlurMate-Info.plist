@@ -21,10 +21,12 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2014 Cliff Rowley. All rights reserved.</string>
+	<key>TMPlugInAPIVersion</key>
+	<integer>2</integer>
 	<key>NSPrincipalClass</key>
-	<string></string>
+	<string>${EXECUTABLE_NAME}</string>
 </dict>
 </plist>
