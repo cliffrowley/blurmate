@@ -39,42 +39,15 @@
 }
 
 - (void)enableBlurForWindow:(NSWindow *)window radius:(double)radius {
-    CGSConnectionID con = CGSMainConnectionID();
-    if (!con) {
-        return;
-    }
-    CGSSetWindowBackgroundBlurRadiusFunction* function = GetCGSSetWindowBackgroundBlurRadiusFunction();
-    if (function) {
-        function(con, (CGSWindowID)[window windowNumber], (int)radius);
+    if(CGSMainConnectionID != NULL && CGSSetWindowBackgroundBlurRadius != NULL) {
+        CGSConnectionID con = CGSMainConnectionID();
+        if (!con) {
+            return;
+        }
+        CGSSetWindowBackgroundBlurRadius(con, (CGSWindowID)[window windowNumber], (int)radius);
     } else {
         NSLog(@"Couldn't get blur function");
     }
-}
-
-static void *GetFunctionByName(NSString *library, char *func) {
-    CFBundleRef bundle;
-    CFURLRef bundleURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef) library, kCFURLPOSIXPathStyle, true);
-    CFStringRef functionName = CFStringCreateWithCString(kCFAllocatorDefault, func, kCFStringEncodingASCII);
-    bundle = CFBundleCreate(kCFAllocatorDefault, bundleURL);
-    void *f = NULL;
-    if (bundle) {
-        f = CFBundleGetFunctionPointerForName(bundle, functionName);
-        CFRelease(bundle);
-    }
-    CFRelease(functionName);
-    CFRelease(bundleURL);
-    return f;
-}
-
-CGSSetWindowBackgroundBlurRadiusFunction* GetCGSSetWindowBackgroundBlurRadiusFunction(void) {
-    static BOOL tried = NO;
-    static CGSSetWindowBackgroundBlurRadiusFunction *function = NULL;
-    if (!tried) {
-        function  = GetFunctionByName(@"/System/Library/Frameworks/ApplicationServices.framework",
-                                      "CGSSetWindowBackgroundBlurRadius");
-        tried = YES;
-    }
-    return function;
 }
 
 @end

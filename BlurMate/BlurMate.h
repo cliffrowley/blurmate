@@ -7,13 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#include <ApplicationServices/ApplicationServices.h>
-
-typedef int CGSConnectionID;
-typedef int CGSWindowID;
-
-typedef CGError CGSSetWindowBackgroundBlurRadiusFunction(CGSConnectionID cid, CGSWindowID wid, NSUInteger blur);
-CGSSetWindowBackgroundBlurRadiusFunction* GetCGSSetWindowBackgroundBlurRadiusFunction(void);
+#import <ApplicationServices/ApplicationServices.h>
+#import "CoreGraphicsServices.h"
 
 @protocol TMPlugInController
 - (float)version;

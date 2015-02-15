@@ -13,6 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7CA79861A901EE700472036 /* CoreGraphicsServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsServices.h; sourceTree = "<group>"; };
 		ADCF61F518D511E0006463C8 /* BlurMate.tmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlurMate.tmplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCF61F818D511E0006463C8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ADCF61FB18D511E0006463C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,6 +80,7 @@
 				ADCF61FF18D511E0006463C8 /* Supporting Files */,
 				ADCF620A18D511FE006463C8 /* BlurMate.h */,
 				ADCF620B18D511FE006463C8 /* BlurMate.m */,
+				A7CA79861A901EE700472036 /* CoreGraphicsServices.h */,
 			);
 			path = BlurMate;
 			sourceTree = "<group>";
