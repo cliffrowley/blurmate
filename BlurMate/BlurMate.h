@@ -21,5 +21,5 @@ CGSSetWindowBackgroundBlurRadiusFunction* GetCGSSetWindowBackgroundBlurRadiusFun
 
 @interface BlurMate : NSObject
 - (id)initWithPlugInController:(id <TMPlugInController>)controller;
-- (void)enableBlurForWindow:(NSWindow *)window;
+- (void)enableBlurForWindow:(NSWindow *)window radius:(double)radius;
 @end
