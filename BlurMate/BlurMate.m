@@ -8,13 +8,19 @@
 
 #import "BlurMate.h"
 
+#if DEBUG
+#define DebugLog NSLog
+#else
+#define DebugLog
+#endif
+
 @implementation BlurMate
 
 - (id)initWithPlugInController:(id <TMPlugInController>)controller {
     NSApp = [NSApplication sharedApplication];
 
     if ((self = [self init])) {
-        NSLog(@"LOADED BLURMATE!");
+        DebugLog(@"LOADED BLURMATE!");
 
         [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidUpdateNotification
                                                           object:nil
@@ -29,7 +35,7 @@
                                                               if (!!blurRadiusObj) {
                                                                   radius = [blurRadiusObj doubleValue];
                                                               }
-                                                              NSLog(@"RADIUS: %f", radius);
+                                                              DebugLog(@"RADIUS: %f", radius);
                                                               [self enableBlurForWindow:window radius:radius];
                                                           }
                                                       }];
@@ -46,7 +52,7 @@
         }
         CGSSetWindowBackgroundBlurRadius(con, (CGSWindowID)[window windowNumber], (int)radius);
     } else {
-        NSLog(@"Couldn't get blur function");
+        DebugLog(@"Couldn't get blur function");
     }
 }
 
