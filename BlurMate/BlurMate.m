@@ -21,7 +21,13 @@
 
     if ((self = [self init])) {
         DebugLog(@"LOADED BLURMATE!");
-
+        
+        if(CGSMainConnectionID == NULL || CGSSetWindowBackgroundBlurRadius == NULL) {
+            DebugLog(@"CGSSetWindowBackgroundBlurRadius or CGSMainConnectionID unavailable.");
+            DebugLog(@"BlurMate will not work.");
+            return self;
+        }
+        
         [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidUpdateNotification
                                                           object:nil
                                                            queue:[NSOperationQueue mainQueue]
