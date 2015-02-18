@@ -8,10 +8,10 @@
 
 #import "BlurMate.h"
 
-#if DEBUG
-#define DebugLog NSLog
+#ifdef DEBUG
+#define DebugLog(...) NSLog(__VA_ARGS__)
 #else
-#define DebugLog
+#define DebugLog(...)
 #endif
 
 @implementation BlurMate
