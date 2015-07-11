@@ -8,14 +8,26 @@
 
 #import "BlurMate.h"
 
+#ifdef DEBUG
+#define DebugLog(...) NSLog(__VA_ARGS__)
+#else
+#define DebugLog(...)
+#endif
+
 @implementation BlurMate
 
 - (id)initWithPlugInController:(id <TMPlugInController>)controller {
     NSApp = [NSApplication sharedApplication];
 
     if ((self = [self init])) {
-        NSLog(@"LOADED BLURMATE!");
-
+        DebugLog(@"LOADED BLURMATE!");
+        
+        if(CGSMainConnectionID == NULL || CGSSetWindowBackgroundBlurRadius == NULL) {
+            DebugLog(@"CGSSetWindowBackgroundBlurRadius or CGSMainConnectionID unavailable.");
+            DebugLog(@"BlurMate will not work.");
+            return self;
+        }
+        
         [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowDidUpdateNotification
                                                           object:nil
                                                            queue:[NSOperationQueue mainQueue]
@@ -29,7 +41,7 @@
                                                               if (!!blurRadiusObj) {
                                                                   radius = [blurRadiusObj doubleValue];
                                                               }
-                                                              NSLog(@"RADIUS: %f", radius);
+                                                              DebugLog(@"RADIUS: %f", radius);
                                                               [self enableBlurForWindow:window radius:radius];
                                                           }
                                                       }];
@@ -39,42 +51,15 @@
 }
 
 - (void)enableBlurForWindow:(NSWindow *)window radius:(double)radius {
-    CGSConnectionID con = CGSMainConnectionID();
-    if (!con) {
-        return;
-    }
-    CGSSetWindowBackgroundBlurRadiusFunction* function = GetCGSSetWindowBackgroundBlurRadiusFunction();
-    if (function) {
-        function(con, (CGSWindowID)[window windowNumber], (int)radius);
+    if(CGSMainConnectionID != NULL && CGSSetWindowBackgroundBlurRadius != NULL) {
+        CGSConnectionID con = CGSMainConnectionID();
+        if (!con) {
+            return;
+        }
+        CGSSetWindowBackgroundBlurRadius(con, (CGSWindowID)[window windowNumber], (int)radius);
     } else {
-        NSLog(@"Couldn't get blur function");
+        DebugLog(@"Couldn't get blur function");
     }
-}
-
-static void *GetFunctionByName(NSString *library, char *func) {
-    CFBundleRef bundle;
-    CFURLRef bundleURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef) library, kCFURLPOSIXPathStyle, true);
-    CFStringRef functionName = CFStringCreateWithCString(kCFAllocatorDefault, func, kCFStringEncodingASCII);
-    bundle = CFBundleCreate(kCFAllocatorDefault, bundleURL);
-    void *f = NULL;
-    if (bundle) {
-        f = CFBundleGetFunctionPointerForName(bundle, functionName);
-        CFRelease(bundle);
-    }
-    CFRelease(functionName);
-    CFRelease(bundleURL);
-    return f;
-}
-
-CGSSetWindowBackgroundBlurRadiusFunction* GetCGSSetWindowBackgroundBlurRadiusFunction(void) {
-    static BOOL tried = NO;
-    static CGSSetWindowBackgroundBlurRadiusFunction *function = NULL;
-    if (!tried) {
-        function  = GetFunctionByName(@"/System/Library/Frameworks/ApplicationServices.framework",
-                                      "CGSSetWindowBackgroundBlurRadius");
-        tried = YES;
-    }
-    return function;
 }
 
 @end
