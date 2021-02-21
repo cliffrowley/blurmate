@@ -1,3 +1,7 @@
+# IMPORTANT NOTE
+
+This project is now retired and unmaintained. I consider this code public domain, so please feel free to do whatever you like with it.
+
 # BlurMate = TM2 + Alpha &rarr; Blur
 
 ![BlurMate](https://f.cloud.github.com/assets/4581/2430127/de1b7166-acba-11e3-9530-ea3527ad07ac.png)
